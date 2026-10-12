@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Create account — Obsidia</title>
+<link rel="stylesheet" href="/static/css/app.css">
+</head>
+<body>
+<div class="auth-shell">
+    <div class="auth-card">
+        <a href="/" class="auth-brand">
+            <svg class="logo-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 2 L22 9 L18 22 L6 22 L2 9 Z" fill="#a594ff" opacity="0.9"></path>
+                <path d="M12 2 L22 9 L12 12 Z" fill="#c3b5ff"></path>
+                <path d="M12 2 L2 9 L12 12 Z" fill="#8f7cff"></path>
+            </svg>
+            Obsidia
+        </a>
+
+        <h1>Create your <em>vault</em>.</h1>
+        <p class="lead">Pick a passphrase you'll remember. We will never ask for it, see it, or be able to reset it.</p>
+
+        <form id="signup-form" autocomplete="off">
+            <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required autocomplete="username" placeholder="you@example.com">
+            </div>
+
+            <div class="field">
+                <label for="passphrase">Passphrase</label>
+                <input type="password" id="passphrase" name="passphrase" required autocomplete="new-password" minlength="10" placeholder="At least 10 characters">
+                <div class="hint">Four random words beats one short password. We can't reset it.</div>
+            </div>
+
+            <div class="field">
+                <label for="confirm">Confirm passphrase</label>
+                <input type="password" id="confirm" name="confirm" required autocomplete="new-password" placeholder="Type it again">
+            </div>
+
+            <div class="auth-warn">
+                <label style="display: flex; gap: 10px; align-items: flex-start; cursor: pointer;">
+                    <input type="checkbox" id="ack" name="ack" style="margin-top: 2px; accent-color: #ffb86b;">
+                    <span>I understand that if I lose this passphrase, my files cannot be recovered — that's how zero-knowledge storage works.</span>
+                </label>
+            </div>
+
+            <div class="auth-err" id="auth-err"></div>
+
+            <button type="submit" id="submit" class="btn btn-primary btn-full btn-lg">Create account &amp; vault</button>
+
+            <p class="auth-sub">Already have an account? <a href="/login">Sign in</a></p>
+        </form>
+    </div>
+</div>
+
+<script src="/static/js/crypto.js"></script>
+<script src="/static/js/api.js"></script>
+<script src="/static/js/auth.js"></script>
+</body>
+</html>

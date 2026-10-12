@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign in — Obsidia</title>
+<link rel="stylesheet" href="/static/css/app.css">
+</head>
+<body>
+<div class="auth-shell">
+    <div class="auth-card">
+        <a href="/" class="auth-brand">
+            <svg class="logo-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 2 L22 9 L18 22 L6 22 L2 9 Z" fill="#a594ff" opacity="0.9"></path>
+                <path d="M12 2 L22 9 L12 12 Z" fill="#c3b5ff"></path>
+                <path d="M12 2 L2 9 L12 12 Z" fill="#8f7cff"></path>
+            </svg>
+            Obsidia
+        </a>
+
+        <h1>Welcome <em>back</em>.</h1>
+        <p class="lead">Sign in and unlock your vault.</p>
+
+        <form id="login-form" autocomplete="off">
+            <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required autocomplete="username" placeholder="you@example.com">
+            </div>
+
+            <div class="field">
+                <label for="passphrase">Passphrase</label>
+                <input type="password" id="passphrase" name="passphrase" required autocomplete="current-password" placeholder="Your passphrase">
+            </div>
+
+            <div class="auth-info" id="auth-info"></div>
+            <div class="auth-err" id="auth-err"></div>
+
+            <button type="submit" id="submit" class="btn btn-primary btn-full btn-lg">Sign in &amp; unlock</button>
+
+            <p class="auth-sub">No account yet? <a href="/signup">Create one</a></p>
+        </form>
+    </div>
+</div>
+
+<script src="/static/js/crypto.js"></script>
+<script src="/static/js/api.js"></script>
+<script src="/static/js/auth.js"></script>
+</body>
+</html>
